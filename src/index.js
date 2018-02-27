@@ -14,8 +14,12 @@ Function.prototype.toString=()=>{
     return value;
 };
 
-
-const asyncIncrementor = () => {};
+let count=0;
+const asyncIncrementor = () => {
+    return new Promise((resolve) => {
+       resolve(++count);
+    })
+};
 
 const createIncrementer = () => {};
 
