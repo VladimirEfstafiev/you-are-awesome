@@ -4,15 +4,19 @@ const createEnumerableProperty = (propertyName) => {return propertyName};
 const createNotEnumerableProperty = (propertyName) => {return Symbol(propertyName)};
 const createProtoMagicObject = () => {
 };
-const incrementor = () => {
-    let value=0;
 
-   return function lll () {
-       value++;
-        return value;
-    }
+let value=0;
+const incrementor = () => {
+value++;
+return incrementor;
 };
+Function.prototype.toString=()=>{
+    return value;
+};
+
+
 const asyncIncrementor = () => {};
+
 const createIncrementer = () => {};
 
 // return same argument not earlier than in one second, and not later, than in two
