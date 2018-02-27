@@ -21,7 +21,16 @@ const asyncIncrementor = () => {
     })
 };
 
-const createIncrementer = () => {};
+const createIncrementer = () => {
+    let count=0;
+   function* Incrementor() {
+       while(true){
+        yield ++count;
+       }
+    }
+    return Incrementor();
+
+};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = (param) => {
