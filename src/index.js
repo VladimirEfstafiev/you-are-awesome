@@ -37,7 +37,22 @@ const returnBackInSecond = (param) => {
     return new Promise((resolve) => {
     setTimeout(()=>{resolve(param);},1052)
 })};
-const getDeepPropertiesCount = () => {};
+const getDeepPropertiesCount = (obj) => {
+let count=0,i=0;
+
+    temp=obj;
+    while(Object.values(temp).length!=0){
+        count+=Object.values(temp).length;
+        count+=Object.values(temp[i]).length;
+        temp=temp[i][i];
+        i++;
+        if(i>99){
+            i=0;
+        }
+    }
+    return count;
+};
+
 const createSerializedObject = () => {};
 const toBuffer = () => {};
 const sortByProto = () => {};
