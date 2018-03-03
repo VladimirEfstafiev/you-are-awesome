@@ -4,8 +4,8 @@ const createEnumerableProperty = (propertyName) => { return propertyName };
 const createNotEnumerableProperty = (propertyName) => { return Symbol(propertyName) };
 
 const createProtoMagicObject = () => {
-let magicObj =new Function();
-    magicObj.__proto__=null;
+    let magicObj = new Function();
+    magicObj.__proto__ = null;
     magicObj.prototype = null;
     return magicObj
 };
@@ -61,16 +61,16 @@ const getDeepPropertiesCount = (obj) => {
     return count;
 };
 
-const createSerializedObject = () => {};
+const createSerializedObject = () => { return null; };
 
 const sortByProto = (arr) => {
-  arr.sort((a,b)=>{
-      if(a.__proto__<b.__proto__){
-          return -1;
-      }else{
-          return 1;
-      }
-  });
+    arr.sort((a, b) => {
+        if (a.__proto__ < b.__proto__) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
     return arr;
 };
 
